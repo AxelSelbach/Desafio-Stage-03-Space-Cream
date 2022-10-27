@@ -21,7 +21,6 @@
 
 }
 
-/*quando o @media for feito, adicionar display e direction no media e apagar daqui*/
 body {
   background-color: var(--bg-center);
 
@@ -60,27 +59,6 @@ body {
 
 }
 
-/*adicionar no @media quando for feito e apagar daqui
-
-#hdr header p {
-  color: #FFFFFF;
-  font-family: var(--ff-txt-nl);
-  font-weight: 400;
-  font-size: 2.4rem;
-  line-height: 2.0rem;
-
-  max-width: 27.5rem;
-
-  margin: 3.2rem 4.8rem 12.5rem 5.4rem;
-
-}*/
-
-/*adicionar no @media quando for feito e apagar daqui
-
-.page main p {
-  display: none;
-}*/
-
 main {
   display: grid;
   text-align: center;
@@ -107,7 +85,8 @@ main p {
 
 .page img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  border-radius: 2rem;
   
 }
 
@@ -146,11 +125,6 @@ main p {
   color: var(--fc-pinkT);
 }
 
-.menu:nth-child(7) {
-  margin-bottom: 6rem;
-}
-
-
 /* Animações */
 
 @keyframes TopDown {
@@ -182,6 +156,10 @@ main p {
     height: 100%;
   }
 
+  #hdr header {
+    height: 100vh;
+  }
+
   #hdr header p {
     color: #FFFFFF;
     font-family: var(--ff-txt-nl);
@@ -201,7 +179,10 @@ main p {
 
   main {
     max-width: 1280px;
-    grid-template-areas: "A B C";
+    grid-template-areas: 
+    "A B C"
+    "D B E"
+    "D F E";
     gap: 3.2rem;
     margin-top: 6.4rem;
     
@@ -209,41 +190,29 @@ main p {
   }
 
   main div:nth-child(2) {
-    width: 22rem;
-    height: 15rem;
-    grid-area: "A";
+    grid-area: A;
 
   }
   
   main div:nth-child(3) {
-    width: 22rem;
-    height: 35rem;
-    grid-area: "B";
+    grid-area: B;
   }
 
   main div:nth-child(4) {
-    width: 22rem;
-    height: 15rem;
-    grid-area: "C";
+    grid-area: C;
   }
 
   main div:nth-child(5) {
-    width: 22rem;
-    height: 35rem;
-    grid-area: "B";
+    grid-area: D;
   
   }
 
   main div:nth-child(6) {
-    width: 22rem;
-    height: 15rem;
-    grid-area: "A";
+    grid-area: F;
   }
 
   main div:nth-child(7) {
-    width: 22rem;
-    height: 35rem;
-    grid-area: "B";
+    grid-area: E;
   }
 
   .page main .menu h2 {
@@ -257,6 +226,8 @@ main p {
     color: var(--fc-ft);
 
     text-align: center;
+    margin-top: 5rem;
+    animation: TopDown 700ms 600ms backwards
   }
 
 }
